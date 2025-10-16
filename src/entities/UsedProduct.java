@@ -3,16 +3,16 @@ package entities;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class usedProduct extends Product{
+public class UsedProduct extends Product{
     private Date manufacture;
 
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public usedProduct(){
+    public UsedProduct(){
         super();
     }
 
-    public usedProduct(String name, Double price, Date manufacture) {
+    public UsedProduct(String name, Double price, Date manufacture) {
         super(name, price);
         this.manufacture = manufacture;
     }
@@ -26,6 +26,6 @@ public class usedProduct extends Product{
     }
     @Override
     public String priceTag(){
-        return String.format("%s (used) R$ %.2f (Manufacture Date: %s", super.getName(), super.getPrice(), sdf.format(manufacture));
+        return String.format("%s (used) R$ %.2f (Manufacture Date: %s) ", super.getName(), super.getPrice(), sdf.format(manufacture));
     }
 }
